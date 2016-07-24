@@ -1,0 +1,23 @@
+{
+  "name": "license-to-read",
+  "version": "1.0.0",
+  "description": "My awsome book site which gives you license to read",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plasticteaspoon/license-to-read.git"
+  },
+  "author": "Jessica Drury",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plasticteaspoon/license-to-read/issues"
+  },
+  "homepage": "https://github.com/plasticteaspoon/license-to-read#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.72.0"
+  }
+}

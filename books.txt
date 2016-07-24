@@ -1,0 +1,48 @@
+PHASE 1
+** create repository on GitHub
+** clone repo to laptop
+** add .gitignore file
+** run npm init
+** install and save express
+** create a wwwroot folder and add a home.html
+** test it!
+** add bootstrap to home.html
+** test it!
+** add angularjs to home.html
+** test it!
+
+PHASE 2
+** add a text box labelled ISBN
+
+
+add a hard-coded list of book objects to scope
+add directives to home.html to show the books in a list
+test it!
+add a GET request to express that returns a hard-coded array of book objects
+add a $hhtp.get() to home.html to get the book list from the server
+test it!
+add book.html to the wwwroot folder
+add support for bootstrap and angular
+test it!
+add a book obect to scope
+add a form to the html and bind to the book object
+test it!
+add a submit button
+add a POST request to express for the book
+test it!
+install nedb and add to package.json
+make POST add a new book to the database
+test it!
+make GET read from the database
+test it!
+add links to the home.html to edit a book
+make book.html distinguish between new books and existing books
+test it!
+make POST distinguish between new books and existing books (insert or update on nedb)
+test it!
+put it live
+test it!
+start adding books
+
+PHASE 2
+have a book lookup service using the scanner...

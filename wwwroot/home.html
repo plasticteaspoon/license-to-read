@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
+        <script>
+            angular.module('bookApp', [])
+            .controller('bookController', ['$scope', '$http', function (scope, http) {
+
+                scope.dangerMessage = '';
+                scope.successMessage = '';
+
+                var clearMessages = function () {
+                    scope.dangerMessage = '';
+                    scope.successMessage = '';
+                };
+
+                scope.isbn = '';
+                scope.onSubmit = function () {
+                    console.log('button clicked');
+                    http.get('/isbnSearch?isbn=' + scope.isbn)
+                        .then(function (response) {
+                            scope.book = response.data;
+                        },
+                        function () {
+                            scope.dangerMessage = 'Oops! Something went wrong.';
+                        });
+                };
+            }]);
+        </script>
+
+    </head>
+
+    <body class="container" ng-app="bookApp" ng-controller="bookController">
+        <h1>Hello!!!</h1>
+
+        <div class="alert alert-danger" ng-show="dangerMessage">{{dangerMessage}}</div>
+        <div class="alert alert-success" ng-show="successMessage">{{successMessage}}</div>
+
+        <form class="form-inline" ng-submit="onSubmit()">
+            <div class="form-group">
+                <label>ISBN no.</label>
+                <input type="text" class="form-control" ng-model="isbn" />
+            </div>
+            <button type="submit" class="btn btn-primary">Go</button>
+        </form>
+
+        <pre ng-show="book">{{book}}</pre>
+
+    </body>
+</html>
